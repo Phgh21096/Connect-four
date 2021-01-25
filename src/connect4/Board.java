@@ -2,7 +2,7 @@ package connect4;
 
 
 import java.util.ArrayList;
-// test//
+
 
 public class Board {
 	
