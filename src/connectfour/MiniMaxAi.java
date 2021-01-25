@@ -151,7 +151,6 @@ public class MiniMaxAi {
 			}
 
 			if (maxMove.getValue() >= b) {
-				// System.out.println("Beta pruning: " + b);
 				return maxMove;
 			}
 

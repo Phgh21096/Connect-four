@@ -194,7 +194,6 @@ public class Gui {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			// System.out.println("keyPressed = " + KeyEvent.getKeyText(e.getKeyCode()));
 			String keyText = KeyEvent.getKeyText(e.getKeyCode());
 
 			for (int i = 0; i < Constants.NUM_OF_COLUMNS; i++) {
@@ -226,7 +225,6 @@ public class Gui {
 
 	private static void undo() {
 		if (!undoBoards.isEmpty()) {
-			// This is the undo implementation for "Human Vs Human" mode.
 			if (GameParameters.gameMode == GameMode.HUMAN_VS_HUMAN) {
 				try {
 					board.setGameOver(false);
@@ -294,7 +292,6 @@ public class Gui {
 
 	private static void redo() {
 		if (!redoBoards.isEmpty()) {
-			// This is the redo implementation for "Human Vs Human" mode.
 			if (GameParameters.gameMode == GameMode.HUMAN_VS_HUMAN) {
 				try {
 					board.setGameOver(false);
@@ -388,7 +385,6 @@ public class Gui {
 		if (frameMainWindow != null)
 			frameMainWindow.dispose();
 		frameMainWindow = new JFrame("Minimax Connect-4");
-		// make the main window appear on the center
 		centerWindow(frameMainWindow, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 		Component compMainWindowContents = createContentComponents();
 		frameMainWindow.getContentPane().add(compMainWindowContents, BorderLayout.CENTER);
@@ -422,8 +418,7 @@ public class Gui {
 		} else if (GameParameters.gameMode == GameMode.MINIMAX_AI_VS_MINIMAX_AI) {
 			setAllButtonsEnabled(false);
 
-			// AI VS AI implementation here
-			// Initial maxDepth = 4. We can change this value for difficulty adjustment.
+			
 			MiniMaxAi ai1 = new MiniMaxAi(GameParameters.maxDepth1, Constants.P1);
 			MiniMaxAi ai2 = new MiniMaxAi(GameParameters.maxDepth2, Constants.P2);
 
@@ -441,13 +436,10 @@ public class Gui {
 	private static void configureGuiStyle() {
 		try {
 			if (GameParameters.guiStyle == GuiStyle.SYSTEM_STYLE) {
-				// Option 1
 				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			} else if (GameParameters.guiStyle == GuiStyle.CROSS_PLATFORM_STYLE) {
-				// Option 2
 				UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 			} else if (GameParameters.guiStyle == GuiStyle.NIMBUS_STYLE) {
-				// Option 3
 				for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 					if ("Nimbus".equals(info.getName())) {
 						UIManager.setLookAndFeel(info.getClassName());
