@@ -30,11 +30,11 @@ import javax.swing.JToolBar;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
-import connectFour.Board;
-import connectFour.Constants;
-import connectFour.GameParameters;
-import connectFour.MiniMaxAi;
-import connectFour.Move;
+import connectfour.Board;
+import connectfour.Constants;
+import connectfour.GameParameters;
+import connectfour.MiniMaxAi;
+import connectfour.Move;
 import enumerations.Color;
 import enumerations.GameMode;
 import enumerations.GuiStyle;
