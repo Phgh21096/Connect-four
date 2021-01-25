@@ -1,7 +1,11 @@
-package connect4;
+package connectFour;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import connect4.Board;
+import connect4.Constants;
+import connect4.Move;
 
 public class MiniMaxAi {
 

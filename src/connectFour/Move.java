@@ -1,4 +1,4 @@
-package connect4;
+package connectFour;
 
 
 public class Move {

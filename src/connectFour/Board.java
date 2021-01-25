@@ -1,6 +1,10 @@
-package connect4;
+package connectFour;
 
 import java.util.ArrayList;
+
+import connect4.Board;
+import connect4.Constants;
+import connect4.Move;
 
 public class Board {
 

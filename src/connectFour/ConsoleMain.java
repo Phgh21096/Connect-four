@@ -1,8 +1,13 @@
-package connect4;
+package connectFour;
 
 import java.util.InputMismatchException;
 
 import java.util.Scanner;
+
+import connect4.Board;
+import connect4.Constants;
+import connect4.MiniMaxAi;
+import connect4.Move;
 
 public class ConsoleMain {
 
