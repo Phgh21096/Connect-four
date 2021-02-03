@@ -68,10 +68,10 @@ public class Gui {
 	public static JLabel checkerLabel = null;
 	
 	
-	static Stack<Board> undoBoards = new Stack<Board>();
-	static Stack<JLabel> undoCheckerLabels = new Stack<JLabel>();
-	static Stack<Board> redoBoards = new Stack<Board>();
-	static Stack<JLabel> redoCheckerLabels = new Stack<JLabel>();
+	static Stack<Board> undoBoards = new Stack<>();
+	static Stack<JLabel> undoCheckerLabels = new Stack<>();
+	static Stack<Board> redoBoards = new Stack<>();
+	static Stack<JLabel> redoCheckerLabels = new Stack<>();
 
 	
 	static JMenuBar menuBar;
