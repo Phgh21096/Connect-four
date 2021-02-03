@@ -129,7 +129,7 @@ public class MiniMaxAi {
 			return lastMove;
 		}
 
-		ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P1));
+		ArrayList<Board> children = new ArrayList<>(board.getChildren(Constants.P1));
 		Move maxMove = new Move(Integer.MIN_VALUE);
 		for (Board child : children) {
 
@@ -166,7 +166,7 @@ public class MiniMaxAi {
 			Move lastMove = new Move(board.getLastMove().getRow(), board.getLastMove().getColumn(), board.evaluate());
 			return lastMove;
 		}
-		ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P2));
+		ArrayList<Board> children = new ArrayList<>(board.getChildren(Constants.P2));
 		Move minMove = new Move(Integer.MAX_VALUE);
 		for (Board child : children) {
 			Move move = maxAlphaBeta(child, depth + 1, a, b);
