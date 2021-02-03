@@ -72,7 +72,7 @@ public class SettingsWindow extends JFrame {
 		add(player1ColorLabel);
 		add(player2ColorLabel);
 
-		gui_style_drop_down = new JComboBox<String>();
+		gui_style_drop_down = new JComboBox<>();
 		gui_style_drop_down.addItem("System style");
 		gui_style_drop_down.addItem("Cross-platform style");
 		gui_style_drop_down.addItem("Nimbus style");
