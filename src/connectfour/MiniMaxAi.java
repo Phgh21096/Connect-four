@@ -77,14 +77,6 @@ public class MiniMaxAi {
 						maxMove.setColumn(child.getLastMove().getColumn());
 						maxMove.setValue(move.getValue());   
 				}
-
-
-
-				if else (move.getValue() >= maxMove.getValue()){
-						maxMove.setRow(child.getLastMove().getRow());
-						maxMove.setColumn(child.getLastMove().getColumn());
-						maxMove.setValue(move.getValue());
-				}
 			}
 			return maxMove;
 		}
@@ -108,11 +100,7 @@ public class MiniMaxAi {
                     minMove.setValue(move.getValue());
                 }
 
-                if else ( move.getValue() <= minMove.getValue() ){
-                    minMove.setRow(child.getLastMove().getRow());
-                    minMove.setColumn(child.getLastMove().getColumn());
-                    minMove.setValue(move.getValue());
-                }
+              
 	        }
 	        return minMove;
 		}
@@ -158,11 +146,7 @@ public class MiniMaxAi {
                         maxMove.setValue(move.getValue());
                 }                          
 
-                else if (move.getValue() >= maxMove.getValue()) {  
-                    maxMove.setRow(child.getLastMove().getRow());
-                    maxMove.setColumn(child.getLastMove().getColumn());
-                    maxMove.setValue(move.getValue());
-				}
+               
 				
 				// Beta pruning.
 				if (maxMove.getValue() >= b) {	
@@ -196,12 +180,6 @@ public class MiniMaxAi {
 					minMove.setValue(move.getValue());
 				}
 
-
-				else if(move.getValue() <= minMove.getValue()) {
-						minMove.setRow(child.getLastMove().getRow());
-						minMove.setColumn(child.getLastMove().getColumn());
-						minMove.setValue(move.getValue());
-				}
 				
 				// Alpha pruning
 				if (minMove.getValue() <= a) {
