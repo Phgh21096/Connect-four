@@ -149,7 +149,7 @@ public class MiniMaxAi {
 			ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P1));
 			Move maxMove = new Move(Integer.MIN_VALUE);
 
-			//Refactoring Cognitive Complexity
+			//Refactoring Cognitive Complexity 1
 			for (Board child : children) {
 	            // And for each child min is called, on a lower depth.
 				Move move = minAlphaBeta(child, depth + 1, a, b);
@@ -189,22 +189,21 @@ public class MiniMaxAi {
 			}
 			ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P2));
 			Move minMove = new Move(Integer.MAX_VALUE);
+			//Refactoring Cognitive Complexity 2
 			for (Board child : children) {
 				Move move = maxAlphaBeta(child, depth + 1, a, b);
-				if(move.getValue() <= minMove.getValue()) {
-	                if ((move.getValue() == minMove.getValue())) {
-	                    if (r.nextInt(2) == 0) {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                    }
-	                }
-	                else {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                }
-	            }
+				if((move.getValue() <= minMove.getValue()) &&  (r.nextInt(2) == 0)){
+					minMove.setRow(child.getLastMove().getRow());
+					minMove.setColumn(child.getLastMove().getColumn());
+					minMove.setValue(move.getValue());
+				}
+
+
+				else if(move.getValue() <= minMove.getValue()) {
+						minMove.setRow(child.getLastMove().getRow());
+						minMove.setColumn(child.getLastMove().getColumn());
+						minMove.setValue(move.getValue());
+				}
 				
 				// Alpha pruning
 				if (minMove.getValue() <= a) {
