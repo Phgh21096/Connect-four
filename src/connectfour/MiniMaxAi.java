@@ -70,21 +70,20 @@ public class MiniMaxAi {
 			for (Board child : children) {
 	            // And for each child min is called, on a lower depth
 				Move move = min(child, depth + 1);
-	            // The child-move with the greatest value is selected and returned by max
-				if (move.getValue() >= maxMove.getValue()) {
-	                if ((move.getValue() == maxMove.getValue())) {
-	                    // If the heuristic has the same value then we randomly choose one of the two moves
-	                    if (r.nextInt(2) == 0) {
-	                        maxMove.setRow(child.getLastMove().getRow());
-	                        maxMove.setColumn(child.getLastMove().getColumn());
-	                        maxMove.setValue(move.getValue());
-	                    }
-	                }
-	                else {
-	                    maxMove.setRow(child.getLastMove().getRow());
-	                    maxMove.setColumn(child.getLastMove().getColumn());
-	                    maxMove.setValue(move.getValue());
-	                }
+	            // The child-move with the greatest value is selected and returned by max\
+				//Refactoring Cognitive Complexity 4
+				if ((move.getValue() == maxMove.getValue()) && (r.nextInt(2) == 0)){
+						maxMove.setRow(child.getLastMove().getRow());
+						maxMove.setColumn(child.getLastMove().getColumn());
+						maxMove.setValue(move.getValue());   
+				}
+
+
+
+				if else (move.getValue() >= maxMove.getValue()){
+						maxMove.setRow(child.getLastMove().getRow());
+						maxMove.setColumn(child.getLastMove().getColumn());
+						maxMove.setValue(move.getValue());
 				}
 			}
 			return maxMove;
@@ -100,22 +99,20 @@ public class MiniMaxAi {
 			}
 			ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P2));
 			Move minMove = new Move(Integer.MAX_VALUE);
+			//Refactoring Cognitive Complexity 3
 			for (Board child : children) {
 				Move move = max(child, depth + 1);
-				if(move.getValue() <= minMove.getValue()) {
-	                if ((move.getValue() == minMove.getValue())) {
-	                    if (r.nextInt(2) == 0) {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                    }
-	                }
-	                else {
-	                        minMove.setRow(child.getLastMove().getRow());
-	                        minMove.setColumn(child.getLastMove().getColumn());
-	                        minMove.setValue(move.getValue());
-	                }
-	            }
+                if (move.getValue() <= minMove.getValue() && (move.getValue() == minMove.getValue())){
+                    minMove.setRow(child.getLastMove().getRow());
+                    minMove.setColumn(child.getLastMove().getColumn());
+                    minMove.setValue(move.getValue());
+                }
+
+                if else ( move.getValue() <= minMove.getValue() ){
+                    minMove.setRow(child.getLastMove().getRow());
+                    minMove.setColumn(child.getLastMove().getColumn());
+                    minMove.setValue(move.getValue());
+                }
 	        }
 	        return minMove;
 		}
@@ -189,6 +186,7 @@ public class MiniMaxAi {
 			}
 			ArrayList<Board> children = new ArrayList<Board>(board.getChildren(Constants.P2));
 			Move minMove = new Move(Integer.MAX_VALUE);
+
 			//Refactoring Cognitive Complexity 2
 			for (Board child : children) {
 				Move move = maxAlphaBeta(child, depth + 1, a, b);
